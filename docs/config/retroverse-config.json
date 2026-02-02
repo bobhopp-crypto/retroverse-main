@@ -1,0 +1,50 @@
+{
+    "meta": {
+      "version": "1.0",
+      "environment": "local"
+    },
+  
+    "theme": {
+      "fonts": {
+        "display": "Anton",
+        "ui": "system-ui"
+      },
+      "colors": {
+        "ink": "#1a1a1a",
+        "sky": "#ACE0DC",
+        "mint": "#B3E1C5",
+        "coral": "#FBA695",
+        "butter": "#F9DA87",
+        "seafoam": "#AADEDC"
+      }
+    },
+  
+    "eras": [
+      { "id": "am-gold", "label": "AM Gold", "range": [1958, 1972], "color": "butter", "enabled": true },
+      { "id": "fm-top-40", "label": "FM Top 40", "range": [1973, 1982], "color": "seafoam", "enabled": true },
+      { "id": "mtv-prime", "label": "MTV Prime", "range": [1983, 1991], "color": "coral", "enabled": true },
+      { "id": "alt-nation", "label": "Alt Nation", "range": [1992, 1999], "color": "mint", "enabled": true },
+      { "id": "y2k", "label": "Millennium Pop", "range": [2000, 2006], "color": "butter", "enabled": true },
+      { "id": "ipod-era", "label": "iPod Era", "range": [2007, 2012], "color": "seafoam", "enabled": true },
+      { "id": "streaming", "label": "Streaming Era", "range": [2013, 2099], "color": "coral", "enabled": true }
+    ],
+  
+    "games": {
+      "hit-parade": { "enabled": true },
+      "name-that-year": { "enabled": true },
+      "climb-the-chart": { "enabled": true },
+      "hangman": { "enabled": true },
+      "higher-lower": { "enabled": true }
+    },
+  
+    "wayback": {
+      "defaultResultSize": 10,
+      "enabled": true
+    },
+  
+    "videoLibrary": {
+      "baseUrl": "https://charttube.net",
+      "enabled": true
+    }
+  }
+  

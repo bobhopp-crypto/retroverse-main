@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Review — RetroVerse</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 18px;
+      line-height: 1.4;
+      color: #111;
+      background: #f0f0f0;
+      padding: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    .status {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding: 8px 0;
+      color: #333;
+    }
+    .status.error { color: #b00; }
+    .video-card {
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .video-card h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .video-card .meta { font-size: 1rem; color: #444; margin-bottom: 0.25rem; }
+    .video-card .path { font-size: 0.9rem; color: #666; word-break: break-all; }
+    .candidates-section {
+      margin-top: 1.5rem;
+    }
+    .candidates-section h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .search-box {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px 12px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+    .search-box:focus { outline: 2px solid #0066cc; outline-offset: 2px; }
+    .candidate-list { list-style: none; }
+    .candidate-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .candidate-item:last-child { border-bottom: none; }
+    .candidate-item input[type="radio"] {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .candidate-item label { cursor: pointer; flex: 1; }
+    .candidate-artist { font-weight: 600; }
+    .candidate-title { color: #333; }
+    .candidate-year { color: #666; font-size: 0.95rem; }
+    .candidate-confidence {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0066cc;
+      min-width: 4rem;
+      text-align: right;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    .actions button {
+      font-size: 1rem;
+      padding: 12px 20px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      min-width: 140px;
+    }
+    .actions button:focus {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+    .btn-accept { background: #0a6b0a; color: #fff; border-color: #0a6b0a; }
+    .btn-not-billboard { background: #c00; color: #fff; border-color: #c00; }
+    .btn-skip { background: #fff; color: #333; }
+    .btn-save { background: #0066cc; color: #fff; border-color: #0066cc; }
+    .btn-accept:disabled, .btn-not-billboard:disabled, .btn-skip:disabled { opacity: 0.6; cursor: not-allowed; }
+    .empty-state { padding: 2rem; text-align: center; color: #666; font-size: 1.1rem; }
+    .hidden { display: none; }
+    .banner {
+      font-size: 1rem;
+      padding: 10px 14px;
+      margin-bottom: 1rem;
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 6px;
+    }
+    .banner strong { margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Match Review</h1>
+  <p class="status" id="status">Loading video-index.json…</p>
+  <div id="banner" class="banner hidden" aria-live="polite"></div>
+
+  <div id="main" class="hidden">
+    <div class="video-card">
+      <h2 id="video-title">—</h2>
+      <p class="meta" id="video-artist">—</p>
+      <p class="meta" id="video-year">—</p>
+      <p class="path" id="video-path">—</p>
+    </div>
+
+    <div class="candidates-section">
+      <h3>Top 5 Billboard candidates</h3>
+      <input type="text" class="search-box" id="candidate-search" placeholder="Filter candidates…" aria-label="Filter candidates">
+      <ul class="candidate-list" id="candidate-list"></ul>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-accept" id="btn-accept">ACCEPT MATCH</button>
+      <button type="button" class="btn-not-billboard" id="btn-not-billboard">NOT BILLBOARD</button>
+      <button type="button" class="btn-skip" id="btn-skip">SKIP</button>
+      <button type="button" class="btn-save" id="btn-save">Download Decisions</button>
+    </div>
+  </div>
+
+  <div id="empty" class="hidden empty-state">
+    No more unmatched videos. Use “Download Decisions” to save your decisions.
+  </div>
+
+  <script>
+    (function () {
+      const statusEl = document.getElementById('status');
+      const bannerEl = document.getElementById('banner');
+      const mainEl = document.getElementById('main');
+      const emptyEl = document.getElementById('empty');
+      const videoTitleEl = document.getElementById('video-title');
+      const videoArtistEl = document.getElementById('video-artist');
+      const videoYearEl = document.getElementById('video-year');
+      const videoPathEl = document.getElementById('video-path');
+      const candidateListEl = document.getElementById('candidate-list');
+      const candidateSearchEl = document.getElementById('candidate-search');
+      const btnAccept = document.getElementById('btn-accept');
+      const btnNotBillboard = document.getElementById('btn-not-billboard');
+      const btnSkip = document.getElementById('btn-skip');
+      const btnSave = document.getElementById('btn-save');
+
+      let videoIndex = [];
+      let decisions = {};
+      let currentIndex = 0;
+
+      function setStatus(msg, isError) {
+        statusEl.textContent = msg;
+        statusEl.className = 'status' + (isError ? ' error' : '');
+      }
+
+      function updateBanner() {
+        const total = videoIndex.length;
+        const reviewed = Object.keys(decisions).length;
+        const remaining = total - reviewed;
+        if (total === 0) {
+          bannerEl.classList.add('hidden');
+          return;
+        }
+        bannerEl.classList.remove('hidden');
+        bannerEl.innerHTML = '<strong>Total:</strong> ' + total + ' &nbsp; <strong>Reviewed:</strong> ' + reviewed + ' &nbsp; <strong>Remaining:</strong> ' + remaining;
+      }
+
+      function normalizeIndex(data) {
+        if (Array.isArray(data)) return data;
+        if (data && typeof data === 'object') return Object.values(data);
+        return [];
+      }
+
+      function getUnmatchedVideos() {
+        return videoIndex.filter(function (v) {
+          const id = v.video_id != null ? v.video_id : (v.videoId || v.id);
+          return id != null && !decisions[id];
+        });
+      }
+
+      function getCurrentVideo() {
+        const unmatched = getUnmatchedVideos();
+        if (currentIndex >= unmatched.length) return null;
+        return unmatched[currentIndex];
+      }
+
+      function getTopCandidates(video) {
+        const raw = video.candidates || video.matches || [];
+        const list = raw.map(function (c) {
+          return {
+            billboard_id: c.billboard_id != null ? c.billboard_id : (c.billboard_song_id || c.id || ''),
+            artist: c.artist != null ? c.artist : (c.video_artist || ''),
+            title: c.title != null ? c.title : (c.video_title || ''),
+            year: c.year != null ? c.year : (c.video_year != null ? c.video_year : (c.primary_year || '')),
+            confidence: typeof c.confidence === 'number' ? c.confidence : (parseFloat(c.match_score || c.confidence_pct / 100) || 0)
+          };
+        });
+        list.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
+        return list.slice(0, 5);
+      }
+
+      function renderCandidates(video, searchTerm) {
+        const candidates = getTopCandidates(video);
+        const term = (searchTerm || '').toLowerCase().trim();
+        const filtered = term
+          ? candidates.filter(function (c) {
+              const s = [c.artist, c.title, c.year].join(' ').toLowerCase();
+              return s.indexOf(term) !== -1;
+            })
+          : candidates;
+
+        candidateListEl.innerHTML = filtered.map(function (c, i) {
+          const pct = Math.round((c.confidence || 0) * 100);
+          const label = [c.artist, c.title, c.year].filter(Boolean).join(' — ') || 'Unknown';
+          return (
+            '<li class="candidate-item">' +
+            '<input type="radio" name="candidate" id="cand-' + i + '" value="' + i + '" data-billboard-id="' + escapeAttr(c.billboard_id) + '" data-confidence="' + c.confidence + '">' +
+            '<label for="cand-' + i + '">' +
+            '<span class="candidate-artist">' + escapeHtml(c.artist || '—') + '</span> — ' +
+            '<span class="candidate-title">' + escapeHtml(c.title || '') + '</span>' +
+            (c.year ? ' — <span class="candidate-year">' + escapeHtml(String(c.year)) + '</span>' : '') +
+            '</label>' +
+            '<span class="candidate-confidence">' + pct + '%</span>' +
+            '</li>'
+          );
+        }).join('');
+
+        if (filtered.length > 0) {
+          document.querySelectorAll('#candidate-list input[name="candidate"]').forEach(function (radio) {
+            radio.addEventListener('change', onCandidateSelect);
+          });
+        }
+      }
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+      function escapeAttr(s) {
+        return String(s).replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      function onCandidateSelect() {
+        btnAccept.disabled = false;
+      }
+
+      function showVideo(video) {
+        videoTitleEl.textContent = video.title != null ? video.title : '—';
+        videoArtistEl.textContent = video.artist != null ? video.artist : '—';
+        videoYearEl.textContent = video.year != null ? String(video.year) : '—';
+        videoPathEl.textContent = video.file_path != null ? video.file_path : (video.filePath || '—');
+
+        renderCandidates(video, candidateSearchEl.value);
+        btnAccept.disabled = true;
+        mainEl.classList.remove('hidden');
+        emptyEl.classList.add('hidden');
+        updateBanner();
+      }
+
+      function showEmpty() {
+        mainEl.classList.add('hidden');
+        emptyEl.classList.remove('hidden');
+        updateBanner();
+      }
+
+      function advance() {
+        const unmatched = getUnmatchedVideos();
+        if (currentIndex >= unmatched.length) {
+          showEmpty();
+          return;
+        }
+        showVideo(unmatched[currentIndex]);
+      }
+
+      function recordDecision(decision, billboardId, confidence) {
+        const video = getCurrentVideo();
+        if (!video) return;
+        const id = video.video_id != null ? video.video_id : (video.videoId || video.id);
+        decisions[id] = {
+          decision: decision,
+          billboard_id: billboardId || undefined,
+          confidence: typeof confidence === 'number' ? confidence : undefined,
+          timestamp: new Date().toISOString()
+        };
+        currentIndex++;
+        advance();
+      }
+
+      btnAccept.addEventListener('click', function () {
+        const selected = document.querySelector('#candidate-list input[name="candidate"]:checked');
+        if (!selected) return;
+        const billboardId = selected.dataset.billboardId || '';
+        const confidence = parseFloat(selected.dataset.confidence) || 0;
+        recordDecision('accept', billboardId, confidence);
+      });
+
+      btnNotBillboard.addEventListener('click', function () {
+        recordDecision('not_billboard');
+      });
+
+      btnSkip.addEventListener('click', function () {
+        recordDecision('skip');
+      });
+
+      btnSave.addEventListener('click', function () {
+        const blob = new Blob([JSON.stringify(decisions, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'decisions.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      candidateSearchEl.addEventListener('input', function () {
+        const video = getCurrentVideo();
+        if (video) renderCandidates(video, candidateSearchEl.value);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.target.tagName === 'INPUT' && e.target.type === 'text') return;
+        if (e.key === '1') { btnAccept.click(); return; }
+        if (e.key === '2') { btnNotBillboard.click(); return; }
+        if (e.key === '3') { btnSkip.click(); return; }
+      });
+
+      var indexUrl = new URL('video-index.json', window.location.href).href;
+      var decisionsUrl = new URL('decisions.json', window.location.href).href;
+
+      fetch(indexUrl)
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
+          return r.json();
+        })
+        .then(function (data) {
+          videoIndex = normalizeIndex(data);
+          setStatus('');
+          return fetch(decisionsUrl).then(function (r) {
+            if (r.ok) return r.json();
+            return {};
+          }).catch(function () { return {}; });
+        })
+        .then(function (decisionsData) {
+          if (decisionsData && typeof decisionsData === 'object' && !Array.isArray(decisionsData)) {
+            decisions = decisionsData;
+          }
+          updateBanner();
+          advance();
+        })
+        .catch(function (err) {
+          setStatus('Failed to load video-index.json: ' + err.message, true);
+        });
+    })();
+  </script>
+</body>
+</html>

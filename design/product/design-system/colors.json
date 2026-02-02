@@ -1,0 +1,13 @@
+{
+  "background": "#1A1510",
+  "surface": "#241E18",
+  "surfaceAlt": "#2E2620",
+  "primary": "#E3C47C",
+  "primaryHover": "#F0D9A0",
+  "secondary": "#A6765B",
+  "secondaryHover": "#C08C70",
+  "text": "#F5ECD7",
+  "textMuted": "#C7BBA7",
+  "divider": "#3C3129",
+  "focus": "#E8D29A"
+}

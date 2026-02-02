@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RetroVerse Video Index Schema",
+  "description": "Lookup table connecting RetroVerse songs to actual video assets.",
+  "type": "object",
+  "required": ["songId", "videoId", "source", "paths"],
+  "properties": {
+    "songId": {
+      "type": "string",
+      "description": "Foreign key linking to song-registry.json."
+    },
+    "videoId": {
+      "type": "string",
+      "description": "Unique identifier for the specific video file or record."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title for fallback matching."
+    },
+    "artist": {
+      "type": "string",
+      "description": "Display artist for fallback matching."
+    },
+    "year": {
+      "type": "integer",
+      "description": "Year metadata used for search or ranking."
+    },
+    "source": {
+      "type": "string",
+      "enum": ["vdj", "itunes", "manual", "unknown"],
+      "description": "Where the video metadata originated."
+    },
+    "paths": {
+      "type": "object",
+      "required": ["relative", "absolute"],
+      "properties": {
+        "relative": {
+          "type": "string",
+          "description": "Path relative to the Video Library system."
+        },
+        "absolute": {
+          "type": "string",
+          "description": "Full resolved path on local disk."
+        }
+      }
+    },
+    "thumbnails": {
+      "type": "object",
+      "properties": {
+        "small": { "type": "string" },
+        "medium": { "type": "string" },
+        "large": { "type": "string" }
+      }
+    },
+    "playback": {
+      "type": "object",
+      "description": "Resolved playback URLs or local file references.",
+      "properties": {
+        "localFile": { "type": "string" },
+        "streamUrl": { "type": "string" },
+        "fallback": { "type": "string" }
+      }
+    }
+  }
+}

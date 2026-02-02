@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RetroVerse Song Registry Schema",
+  "description": "Canonical representation of a musical work inside RetroVerse.",
+  "type": "object",
+  "required": ["songId", "title", "artist", "year", "chartHistory"],
+  "properties": {
+    "songId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_\\-]+$",
+      "description": "Stable unique identifier for a song. Never changes."
+    },
+    "title": {
+      "type": "string",
+      "description": "Normalized song title."
+    },
+    "artist": {
+      "type": "string",
+      "description": "Normalized artist name."
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900,
+      "maximum": 2100,
+      "description": "Release year or first chart appearance."
+    },
+    "decade": {
+      "type": "string",
+      "pattern": "^[0-9]{4}s$",
+      "description": "Derived decade label used for filtering."
+    },
+    "peakPosition": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Highest chart position achieved."
+    },
+    "chartHistory": {
+      "type": "array",
+      "description": "Week-by-week chart performance records.",
+      "items": {
+        "type": "object",
+        "required": ["week", "position"],
+        "properties": {
+          "week": {
+            "type": "string",
+            "format": "date",
+            "description": "Chart week (YYYY-MM-DD)."
+          },
+          "position": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "Chart position for the specified week."
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional extended song metadata.",
+      "properties": {
+        "genre": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

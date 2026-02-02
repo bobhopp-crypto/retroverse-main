@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Library - RetroVerse</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 1rem;
+      }
+
+      .console {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        body {
+          padding: 2rem;
+        }
+        .console {
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .console-row {
+        margin-bottom: 1rem;
+      }
+
+      /* Row 1: Time Range Button/Slider */
+      .console-row:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .time-range-button-container {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background: #f5f5f5;
+        border-radius: 4px;
+        padding: 0 2px;
+      }
+
+      .time-slider-ticks {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 10px;
+      }
+
+      .time-slider-tick {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        flex: 1;
+      }
+
+      .time-slider-tick::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        width: 1px;
+        height: 8px;
+        background: #ccc;
+      }
+
+      .time-slider-label {
+        font-size: 11px;
+        color: #555;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      .spread-toggle-btn.time-range-slider {
+        position: absolute;
+        left: 0%;
+        min-width: 60px;
+        padding: 0.5rem 0.75rem;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: grab;
+        user-select: none;
+        border: 2px solid #333;
+        background: white;
+        border-radius: 4px;
+        line-height: 1.2;
+        text-align: center;
+        transition: none;
+      }
+
+      .spread-toggle-btn.time-range-slider:active {
+        cursor: grabbing;
+      }
+
+      .spread-toggle-btn.time-range-slider[data-state="all"] {
+        position: static;
+        margin: 0 auto;
+        width: auto;
+        border: 1px solid #ccc;
+      }
+
+      .spread-toggle-btn.time-range-slider[data-state="all"]:hover {
+        background: #f5f5f5;
+        border-color: #999;
+      }
+
+      /* Row 2: Alpha Filter + Search */
+      .alpha-filter-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      #searchInput {
+        width: 160px;
+        flex-shrink: 0;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      
+      #searchInput:focus {
+        outline: none;
+        border-color: #999;
+      }
+
+      .search-row {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .alpha-viewport {
+        width: 236px; /* 5 buttons * 44px + 4 gaps * 4px */
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+        cursor: grab;
+      }
+
+      .alpha-viewport:active {
+        cursor: grabbing;
+      }
+
+      .alpha-center-indicator {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 44px;
+        transform: translateX(-50%);
+        pointer-events: none;
+        z-index: 1;
+        border-bottom: 2px solid #333;
+      }
+
+      .alpha-buttons-container {
+        display: flex;
+        gap: 4px;
+        flex-wrap: nowrap;
+        transition: transform 0.2s ease;
+      }
+
+      .alpha-buttons-container.dragging {
+        transition: none;
+      }
+
+      .alpha-button {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 2px solid #ccc;
+        background: white;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        position: relative;
+        z-index: 0;
+      }
+
+      .alpha-button:hover {
+        border-color: #999;
+        background: #f5f5f5;
+      }
+
+      .alpha-button.active {
+        background: #333;
+        color: white;
+        border-color: #333;
+        font-weight: 700;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .alpha-reset-btn {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: white;
+        flex-shrink: 0;
+      }
+
+      /* Row 3: Popularity Toggles */
+      .popularity-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .popularity-toggle {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: white;
+      }
+
+      .popularity-toggle.active {
+        background: #333;
+        color: white;
+      }
+
+      .counter-placeholder {
+        margin-left: 1rem;
+      }
+
+      .playlist-btn {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: white;
+      }
+
+      .playlist-btn.hasItems {
+        /* Optional: different styling when playlist has items */
+      }
+
+      .random-btn {
+        margin-left: auto;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: white;
+      }
+
+      /* Random Modal */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      .modal-overlay.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 2rem;
+        max-width: 400px;
+        width: 90%;
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        font-size: 1.5rem;
+      }
+
+      .modal-controls {
+        margin-top: 1rem;
+      }
+
+      .modal-control {
+        margin-bottom: 1rem;
+      }
+
+      .modal-control label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-control input {
+        width: 100%;
+        padding: 0.5rem;
+      }
+
+      /* Video List */
+      .video-list {
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .video-list {
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .video-item {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .video-item-thumbnail {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        background: #eee;
+        flex-shrink: 0;
+      }
+
+      .video-item-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .video-item-title {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+
+      .video-item-artist {
+        color: #666;
+      }
+
+      .addBtn {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+
+      .videoRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Console -->
+    <div class="console">
+      <!-- Row 1: Time Range Button/Slider -->
+      <div class="console-row">
+        <div class="time-range-button-container">
+          <button id="spreadToggleBtn" class="spread-toggle-btn time-range-slider">ALL</button>
+        </div>
+        <div class="time-slider-ticks" id="timeSliderTicks">
+          <div class="time-slider-tick"><span class="time-slider-label">≤50s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">60s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">70s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">80s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">90s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">00s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">10s</span></div>
+          <div class="time-slider-tick"><span class="time-slider-label">≥20s</span></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Search -->
+      <div class="console-row">
+        <div class="search-row">
+          <input id="searchInput" type="search" placeholder="Search…" />
+          <span id="alphaChip" class="alpha-chip hidden"></span>
+        </div>
+      </div>
+
+      <!-- Row 3: Popularity Toggles -->
+      <div class="console-row">
+        <div class="popularity-row">
+          <button class="popularity-toggle" data-playcount-bucket="heavy">HEAVY</button>
+          <button class="popularity-toggle" data-playcount-bucket="med">MED</button>
+          <button class="popularity-toggle" data-playcount-bucket="light">LIGHT</button>
+          <button class="popularity-toggle" data-playcount-bucket="none">NONE</button>
+          <span class="counter-placeholder" id="counterPlaceholder">0 items</span>
+          <button class="playlist-btn" id="playlistBtn">0 - 00:00</button>
+          <button class="random-btn" id="randomBtn">Random</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Debug Status -->
+    <div style="display: flex; align-items: center; gap: 1rem; padding: 8px 0;">
+      <div id="debugStatus" style="font: 12px system-ui; opacity: .7; padding: 8px 0;"></div>
+      <button id="resetFiltersBtn">Reset</button>
+    </div>
+
+    <!-- Random Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">×</button>
+        <h2>Random Selection</h2>
+        <div class="modal-controls">
+          <div class="modal-control">
+            <label>Bias</label>
+            <input type="text" id="biasInput" placeholder="Bias control">
+          </div>
+          <div class="modal-control">
+            <label>Count</label>
+            <input type="number" id="countInput" placeholder="Count" value="10">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video List -->
+    <div class="video-list" id="videoList"></div>
+
+    <script type="module" src="/src/library.ts"></script>
+  </body>
+</html>

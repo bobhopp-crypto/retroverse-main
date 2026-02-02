@@ -1,0 +1,98 @@
+/**
+ * RetroVerse global theme — CSS variables and utility classes.
+ * Mobile-first; does not override existing layout rules.
+ */
+:root {
+  /* Colors */
+  --rv-color-navy: #0B0D17;
+  --rv-color-gold: #F8D17A;
+  --rv-color-mint: #A6E3E9;
+  --rv-color-coral: #FF8B7B;
+  --rv-color-butter: #FFE8A3;
+  --rv-color-white: #FFFFFF;
+  --rv-color-black: #000000;
+
+  /* Radii */
+  --rv-radius-sm: 6px;
+  --rv-radius-md: 12px;
+  --rv-radius-lg: 20px;
+
+  /* Shadows */
+  --rv-shadow-soft: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  /* Spacing (rem) */
+  --rv-space-0: 0;
+  --rv-space-1: 0.25rem;
+  --rv-space-2: 0.5rem;
+  --rv-space-3: 0.75rem;
+  --rv-space-4: 1rem;
+  --rv-space-5: 1.25rem;
+  --rv-space-6: 1.5rem;
+  --rv-space-7: 1.75rem;
+  --rv-space-8: 2rem;
+  --rv-space-9: 2.25rem;
+
+  /* Typography */
+  --rv-font-family: "DM Sans", system-ui, sans-serif;
+  --rv-text-xs: 0.75rem;
+  --rv-text-sm: 0.875rem;
+  --rv-text-md: 1rem;
+  --rv-text-lg: 1.125rem;
+  --rv-text-xl: 1.25rem;
+  --rv-text-2xl: 1.5rem;
+
+  /* Video Library semantic (same palette as vars for migration) */
+  --rv-bg-base: #1A1510;
+  --rv-bg-panel: #241E18;
+  --rv-bg-hover: #2E2620;
+  --rv-bg-drag: #3C3120;
+  --rv-border: #3C3129;
+  --rv-text: #F5ECD7;
+  --rv-text-muted: #C7BBA7;
+  --rv-focus: #E8D29A;
+  --rv-chip-selected: #E3C47C;
+  --rv-accent: #A6765B;
+  --rv-accent-hover: #B5846B;
+}
+
+/* Utility classes */
+.rv-card {
+  background: var(--rv-color-navy);
+  padding: 1.25rem;
+  border-radius: var(--rv-radius-lg);
+  box-shadow: var(--rv-shadow-soft);
+}
+
+.rv-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--rv-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--rv-font-family);
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.rv-btn:hover {
+  opacity: 0.9;
+}
+
+.rv-btn-gold {
+  background: var(--rv-color-gold);
+  color: var(--rv-color-black);
+}
+
+.rv-btn-outline {
+  border: 2px solid var(--rv-color-gold);
+  color: var(--rv-color-gold);
+  background: transparent;
+}
+
+.rv-btn-outline:hover {
+  background: rgba(248, 209, 122, 0.1);
+}
+
+/* Video Library inputs: placeholder uses muted text */
+input::placeholder {
+  color: var(--rv-text-muted);
+}
