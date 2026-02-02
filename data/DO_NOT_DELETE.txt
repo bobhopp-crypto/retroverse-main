@@ -1,0 +1,9 @@
+THIS FOLDER IS CANONICAL RETROVERSE DATA
+
+• It is a shared source of truth
+• Multiple pages and generators depend on it
+• Do NOT move, rename, or delete this folder
+• Changes should be intentional and scripted
+
+To unlock (advanced):
+chflags -R nouchg retroverse-data

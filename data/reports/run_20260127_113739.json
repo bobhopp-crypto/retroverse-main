@@ -1,0 +1,16 @@
+{
+  "timestamp": "20260127_113739",
+  "videos_indexed": null,
+  "registry_size": null,
+  "linked_high_confidence": null,
+  "flags": {
+    "build_video_index": false,
+    "build_registry": false,
+    "link_videos": false,
+    "deploy_site": false,
+    "write_report": true,
+    "full_update": false,
+    "skip_registry": false,
+    "vdj_xml": "/Users/bobhopp/Library/Application Support/VirtualDJ/database.xml"
+  }
+}

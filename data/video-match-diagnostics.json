@@ -1,0 +1,1210 @@
+{
+  "summary": {
+    "total_songs": 32239,
+    "matched_songs": 3772,
+    "unmatched_songs": 28467,
+    "match_rate_pct": 11.7
+  },
+  "samples_unmatched": [
+    {
+      "song_id": "100_PROOF_AGED_IN_SOUL__EVERYTHING_GOOD_IS_BAD",
+      "artist": "100 Proof Aged In Soul",
+      "title": "Everything Good Is Bad",
+      "primary_year": 1972
+    },
+    {
+      "song_id": "100_PROOF_AGED_IN_SOUL__ONE_MAN_S_LEFTOVERS_IS_ANOTHER_MAN_S_FEAST",
+      "artist": "100 Proof Aged In Soul",
+      "title": "One Man's Leftovers (Is Another Man's Feast)",
+      "primary_year": 1971
+    },
+    {
+      "song_id": "100_PROOF_AGED_IN_SOUL__SOMEBODY_S_BEEN_SLEEPING",
+      "artist": "100 Proof Aged In Soul",
+      "title": "Somebody's Been Sleeping",
+      "primary_year": 1970
+    },
+    {
+      "song_id": "100_PROOF_AGED_IN_SOUL__TOO_MANY_COOKS_SPOIL_THE_SOUP",
+      "artist": "100 Proof Aged In Soul",
+      "title": "Too Many Cooks (Spoil The Soup)",
+      "primary_year": 1969
+    },
+    {
+      "song_id": "100_STRINGS_AND_JONO__I_NEED_YOU_NOW",
+      "artist": "100 Strings And Jono",
+      "title": "I Need You Now",
+      "primary_year": 1960
+    },
+    {
+      "song_id": "10CC__ART_FOR_ART_S_SAKE",
+      "artist": "10cc",
+      "title": "Art For Art's Sake",
+      "primary_year": 1975
+    },
+    {
+      "song_id": "10CC__FOR_YOU_AND_I",
+      "artist": "10cc",
+      "title": "For You And I",
+      "primary_year": 1979
+    },
+    {
+      "song_id": "10CC__GOOD_MORNING_JUDGE",
+      "artist": "10cc",
+      "title": "Good Morning Judge",
+      "primary_year": 1977
+    },
+    {
+      "song_id": "10CC__I_M_MANDY_FLY_ME",
+      "artist": "10cc",
+      "title": "I'm Mandy Fly Me",
+      "primary_year": 1976
+    },
+    {
+      "song_id": "10CC__PEOPLE_IN_LOVE",
+      "artist": "10cc",
+      "title": "People In Love",
+      "primary_year": 1977
+    },
+    {
+      "song_id": "10CC__RUBBER_BULLETS",
+      "artist": "10cc",
+      "title": "Rubber Bullets",
+      "primary_year": 1973
+    },
+    {
+      "song_id": "10CC__THE_THINGS_WE_DO_FOR_LOVE",
+      "artist": "10cc",
+      "title": "The Things We Do For Love",
+      "primary_year": 1977
+    },
+    {
+      "song_id": "10_000_MANIACS__BECAUSE_THE_NIGHT",
+      "artist": "10,000 Maniacs",
+      "title": "Because The Night",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "10_000_MANIACS__CANDY_EVERYBODY_WANTS",
+      "artist": "10,000 Maniacs",
+      "title": "Candy Everybody Wants",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "10_000_MANIACS__FEW_AND_FAR_BETWEEN",
+      "artist": "10,000 Maniacs",
+      "title": "Few And Far Between",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "10_000_MANIACS__MORE_THAN_THIS",
+      "artist": "10,000 Maniacs",
+      "title": "More Than This",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "10_000_MANIACS__THESE_ARE_DAYS",
+      "artist": "10,000 Maniacs",
+      "title": "These Are Days",
+      "primary_year": 1992
+    },
+    {
+      "song_id": "10_000_MANIACS__WHAT_S_THE_MATTER_HERE",
+      "artist": "10,000 Maniacs",
+      "title": "What's The Matter Here?",
+      "primary_year": 1988
+    },
+    {
+      "song_id": "10_YEARS__WASTELAND",
+      "artist": "10 Years",
+      "title": "Wasteland",
+      "primary_year": 2006
+    },
+    {
+      "song_id": "112__ANYWHERE",
+      "artist": "112",
+      "title": "Anywhere",
+      "primary_year": 1999
+    },
+    {
+      "song_id": "112__COME_SEE_ME",
+      "artist": "112",
+      "title": "Come See Me",
+      "primary_year": 1996
+    },
+    {
+      "song_id": "112__CUPID",
+      "artist": "112",
+      "title": "Cupid",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "112__HOT_WET",
+      "artist": "112",
+      "title": "Hot & Wet",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "112__IT_S_OVER_NOW",
+      "artist": "112",
+      "title": "It's Over Now",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "112__LOVE_ME",
+      "artist": "112",
+      "title": "Love Me",
+      "primary_year": 1998
+    },
+    {
+      "song_id": "112__NA_NA_NA",
+      "artist": "112",
+      "title": "Na Na Na",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "112__ONLY_YOU",
+      "artist": "112",
+      "title": "Only You",
+      "primary_year": 1996
+    },
+    {
+      "song_id": "112__PEACHES_CREAM",
+      "artist": "112",
+      "title": "Peaches & Cream",
+      "primary_year": 2001
+    },
+    {
+      "song_id": "112__U_ALREADY_KNOW",
+      "artist": "112",
+      "title": "U Already Know",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "12_GAUGE__DUNKIE_BUTT_PLEASE_PLEASE_PLEASE",
+      "artist": "12 Gauge",
+      "title": "Dunkie Butt (Please Please Please)",
+      "primary_year": 1994
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__1_2_3_RED_LIGHT",
+      "artist": "1910 Fruitgum Co",
+      "title": "1, 2, 3, Red Light",
+      "primary_year": 1968
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__GOODY_GOODY_GUMDROPS",
+      "artist": "1910 Fruitgum Co",
+      "title": "Goody Goody Gumdrops",
+      "primary_year": 1968
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__INDIAN_GIVER",
+      "artist": "1910 Fruitgum Co",
+      "title": "Indian Giver",
+      "primary_year": 1969
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__MAY_I_TAKE_A_GIANT_STEP_INTO_YOUR_HEART",
+      "artist": "1910 Fruitgum Co",
+      "title": "May I Take A Giant Step (Into Your Heart)",
+      "primary_year": 1968
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__SIMON_SAYS",
+      "artist": "1910 Fruitgum Co",
+      "title": "Simon Says",
+      "primary_year": 1968
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__SPECIAL_DELIVERY",
+      "artist": "1910 Fruitgum Co",
+      "title": "Special Delivery",
+      "primary_year": 1969
+    },
+    {
+      "song_id": "1910_FRUITGUM_CO__THE_TRAIN",
+      "artist": "1910 Fruitgum Co",
+      "title": "The Train",
+      "primary_year": 1969
+    },
+    {
+      "song_id": "1927__THAT_S_WHEN_I_THINK_OF_YOU",
+      "artist": "1927",
+      "title": "That's When I Think Of You",
+      "primary_year": 1989
+    },
+    {
+      "song_id": "1_OF_THE_GIRLS__DO_DA_WHAT",
+      "artist": "1 Of The Girls",
+      "title": "Do Da What",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "21_SAVAGE_BURNA_BOY__JUST_LIKE_ME",
+      "artist": "21 Savage, Burna Boy",
+      "title": "Just Like Me",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE_LIL_DURK__DANGEROUS",
+      "artist": "21 Savage, Lil Durk",
+      "title": "Dangerous",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE_OFFSET__GHOSTFACE_KILLERS",
+      "artist": "21 Savage, Offset",
+      "title": "Ghostface Killers",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE_OFFSET__MAD_STALKERS",
+      "artist": "21 Savage, Offset",
+      "title": "Mad Stalkers",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE_OFFSET__RAP_SAVED_ME",
+      "artist": "21 Savage, Offset",
+      "title": "Rap Saved Me",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE_TOMMY_NEWPORT__RED_SKY",
+      "artist": "21 Savage, Tommy Newport",
+      "title": "Red Sky",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE_TRAVIS_SCOTT__NEE_NAH",
+      "artist": "21 Savage, Travis Scott",
+      "title": "Nee-nah",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE_YOUNG_THUG__POP_UR_SHT",
+      "artist": "21 Savage, Young Thug",
+      "title": "Pop Ur Sht",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__1_5",
+      "artist": "21 Savage",
+      "title": "1.5",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__3AM_ON_GLENWOOD",
+      "artist": "21 Savage",
+      "title": "3AM On Glenwood",
+      "primary_year": 2022
+    },
+    {
+      "song_id": "21_SAVAGE__ALL_MY_FRIENDS",
+      "artist": "21 Savage",
+      "title": "All My Friends",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__ALL_OF_ME",
+      "artist": "21 Savage",
+      "title": "All Of Me",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__ASMR",
+      "artist": "21 Savage",
+      "title": "ASMR",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__A_LOT",
+      "artist": "21 Savage",
+      "title": "A Lot",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__BANK_ACCOUNT",
+      "artist": "21 Savage",
+      "title": "Bank Account",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE__BRAND_NEW_DRACO",
+      "artist": "21 Savage",
+      "title": "Brand New Draco",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__BREAK_DA_LAW",
+      "artist": "21 Savage",
+      "title": "Break Da Law",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__CAN_T_LEAVE_WITHOUT_IT",
+      "artist": "21 Savage",
+      "title": "Can't Leave Without It",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__DARK_DAYS",
+      "artist": "21 Savage",
+      "title": "Dark Days",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__FAMOUS",
+      "artist": "21 Savage",
+      "title": "Famous",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE__GLOCK_IN_MY_LAP",
+      "artist": "21 Savage",
+      "title": "Glock In My Lap",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__GUN_SMOKE",
+      "artist": "21 Savage",
+      "title": "Gun Smoke",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__IMMORTAL",
+      "artist": "21 Savage",
+      "title": "Immortal",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__LETTER_TO_MY_BRUDDA",
+      "artist": "21 Savage",
+      "title": "Letter To My Brudda",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__MANY_MEN",
+      "artist": "21 Savage",
+      "title": "Many Men",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__MONSTER",
+      "artist": "21 Savage",
+      "title": "Monster",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__MR_RIGHT_NOW",
+      "artist": "21 Savage",
+      "title": "Mr. Right Now",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__MY_CHOPPA_HATE_N_S",
+      "artist": "21 Savage",
+      "title": "My Choppa Hate N****s",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE__MY_DAWG",
+      "artist": "21 Savage",
+      "title": "My Dawg",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__NO_HEART",
+      "artist": "21 Savage",
+      "title": "No Heart",
+      "primary_year": 2016
+    },
+    {
+      "song_id": "21_SAVAGE__NO_OPP_LEFT_BEHIND",
+      "artist": "21 Savage",
+      "title": "No Opp Left Behind",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__N_H_I_E",
+      "artist": "21 Savage",
+      "title": "N.H.I.E.",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__OUT_FOR_THE_NIGHT",
+      "artist": "21 Savage",
+      "title": "Out For The Night",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "21_SAVAGE__PROVE_IT",
+      "artist": "21 Savage",
+      "title": "Prove It",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__REDRUM",
+      "artist": "21 Savage",
+      "title": "Redrum",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__RED_OPPS",
+      "artist": "21 Savage",
+      "title": "Red Opps",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "21_SAVAGE__RICH_N_GGA_SH_T",
+      "artist": "21 Savage",
+      "title": "Rich N*gga Sh*t",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__RIP_LUV",
+      "artist": "21 Savage",
+      "title": "RIP Luv",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__RUNNIN",
+      "artist": "21 Savage",
+      "title": "Runnin",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__SAID_N_DONE",
+      "artist": "21 Savage",
+      "title": "Said N Done",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__SEE_THE_REAL",
+      "artist": "21 Savage",
+      "title": "See The Real",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__SHOULD_VE_WORE_A_BONNET",
+      "artist": "21 Savage",
+      "title": "Should've Wore A Bonnet",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__SLIDIN",
+      "artist": "21 Savage",
+      "title": "Slidin",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__SNEAKY",
+      "artist": "21 Savage",
+      "title": "Sneaky",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "21_SAVAGE__SNITCHES_RATS",
+      "artist": "21 Savage",
+      "title": "Snitches & Rats",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__STEPPIN_ON_N_GGAS",
+      "artist": "21 Savage",
+      "title": "Steppin On N*ggas",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "21_SAVAGE__X",
+      "artist": "21 Savage",
+      "title": "X",
+      "primary_year": 2016
+    },
+    {
+      "song_id": "24KGOLDN__MOOD",
+      "artist": "24kgoldn",
+      "title": "Mood",
+      "primary_year": 2020
+    },
+    {
+      "song_id": "24KGOLDN__VALENTINO",
+      "artist": "24kgoldn",
+      "title": "Valentino",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "2GETHER__THE_HARDEST_PART_OF_BREAKING_UP_IS_GETTING_BACK_YOUR_STUFF",
+      "artist": "2gether",
+      "title": "The Hardest Part Of Breaking Up (Is Getting Back Your Stuff)",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "2ND_II_NONE__BE_TRUE_TO_YOURSELF",
+      "artist": "2nd Ii None",
+      "title": "Be True To Yourself",
+      "primary_year": 1992
+    },
+    {
+      "song_id": "2ND_II_NONE__IF_YOU_WANT_IT",
+      "artist": "2nd Ii None",
+      "title": "If You Want It",
+      "primary_year": 1992
+    },
+    {
+      "song_id": "2NU__THIS_IS_PONDEROUS",
+      "artist": "2nu",
+      "title": "This Is Ponderous",
+      "primary_year": 1990
+    },
+    {
+      "song_id": "2PAC_DUET__PAPA_Z_SONG",
+      "artist": "2pac Duet",
+      "title": "Papa'z Song",
+      "primary_year": 1994
+    },
+    {
+      "song_id": "2PAC_NOTORIOUS_B_I_G_RADIO_DRAMACYDAL__RUNNIN",
+      "artist": "2pac, Notorious B.i.g., Radio, Dramacydal",
+      "title": "Runnin'",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "2PAC_OUTLAWZ__BABY_DON_T_CRY_KEEP_YA_HEAD_UP_II",
+      "artist": "2pac + Outlawz",
+      "title": "Baby Don't Cry (Keep Ya Head Up II)",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "2PAC__CHANGES",
+      "artist": "2pac",
+      "title": "Changes",
+      "primary_year": 1998
+    },
+    {
+      "song_id": "2PAC__DEAR_MAMA_OLD_SCHOOL",
+      "artist": "2pac",
+      "title": "Dear Mama/Old School",
+      "primary_year": 1995
+    },
+    {
+      "song_id": "2PAC__DO_FOR_LOVE",
+      "artist": "2pac",
+      "title": "Do For Love",
+      "primary_year": 1998
+    },
+    {
+      "song_id": "2PAC__HOW_DO_U_WANT_IT_CALIFORNIA_LOVE",
+      "artist": "2pac",
+      "title": "How Do U Want It/California Love",
+      "primary_year": 1996
+    },
+    {
+      "song_id": "2PAC__I_GET_AROUND",
+      "artist": "2pac",
+      "title": "I Get Around",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "2PAC__I_WONDER_IF_HEAVEN_GOT_A_GHETTO",
+      "artist": "2pac",
+      "title": "I Wonder If Heaven Got A Ghetto",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "2PAC__KEEP_YA_HEAD_UP",
+      "artist": "2pac",
+      "title": "Keep Ya Head Up",
+      "primary_year": 1993
+    },
+    {
+      "song_id": "2PAC__SO_MANY_TEARS",
+      "artist": "2pac",
+      "title": "So Many Tears",
+      "primary_year": 1995
+    },
+    {
+      "song_id": "2PAC__STILL_BALLIN",
+      "artist": "2pac",
+      "title": "Still Ballin",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "2PAC__TEMPTATIONS",
+      "artist": "2pac",
+      "title": "Temptations",
+      "primary_year": 1995
+    },
+    {
+      "song_id": "2PAC__THUGS_GET_LONELY_TOO",
+      "artist": "2pac",
+      "title": "Thugs Get Lonely Too",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "2PAC__THUGZ_MANSION",
+      "artist": "2pac",
+      "title": "Thugz Mansion",
+      "primary_year": 2002
+    },
+    {
+      "song_id": "2PAC__UNTIL_THE_END_OF_TIME",
+      "artist": "2pac",
+      "title": "Until The End Of Time",
+      "primary_year": 2001
+    },
+    {
+      "song_id": "2_CHAINZ_DRAKE__BIGGER_YOU",
+      "artist": "2 Chainz, Drake",
+      "title": "Bigger > You",
+      "primary_year": 2018
+    },
+    {
+      "song_id": "2_CHAINZ_X_GUCCI_MANE_X_QUAVO__GOOD_DRANK",
+      "artist": "2 Chainz X Gucci Mane X Quavo",
+      "title": "Good Drank",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "2_CHAINZ__4_AM",
+      "artist": "2 Chainz",
+      "title": "4 AM",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "2_CHAINZ__BIRTHDAY_SONG",
+      "artist": "2 Chainz",
+      "title": "Birthday Song",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "2_CHAINZ__FEDS_WATCHING",
+      "artist": "2 Chainz",
+      "title": "Feds Watching",
+      "primary_year": 2013
+    },
+    {
+      "song_id": "2_CHAINZ__GOTTA_LOTTA",
+      "artist": "2 Chainz",
+      "title": "Gotta Lotta",
+      "primary_year": 2016
+    },
+    {
+      "song_id": "2_CHAINZ__IT_S_A_VIBE",
+      "artist": "2 Chainz",
+      "title": "It's A Vibe",
+      "primary_year": 2017
+    },
+    {
+      "song_id": "2_CHAINZ__I_DO_IT",
+      "artist": "2 Chainz",
+      "title": "I Do It",
+      "primary_year": 2013
+    },
+    {
+      "song_id": "2_CHAINZ__I_M_DIFFERENT",
+      "artist": "2 Chainz",
+      "title": "I'm Different",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "2_CHAINZ__MOMMA_I_HIT_A_LICK",
+      "artist": "2 Chainz",
+      "title": "Momma I Hit A Lick",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "2_CHAINZ__NO_LIE",
+      "artist": "2 Chainz",
+      "title": "No Lie",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "2_CHAINZ__PROUD",
+      "artist": "2 Chainz",
+      "title": "Proud",
+      "primary_year": 2018
+    },
+    {
+      "song_id": "2_CHAINZ__RULE_THE_WORLD",
+      "artist": "2 Chainz",
+      "title": "Rule The World",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "2_CHAINZ__WATCH_OUT",
+      "artist": "2 Chainz",
+      "title": "Watch Out",
+      "primary_year": 2016
+    },
+    {
+      "song_id": "2_CHAINZ__WE_OWN_IT_FAST_FURIOUS",
+      "artist": "2 Chainz",
+      "title": "We Own It (Fast & Furious)",
+      "primary_year": 2013
+    },
+    {
+      "song_id": "2_CHAINZ__WHIP",
+      "artist": "2 Chainz",
+      "title": "Whip",
+      "primary_year": 2019
+    },
+    {
+      "song_id": "2_CHAINZ__YUCK",
+      "artist": "2 Chainz",
+      "title": "Yuck!",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "2_HYPED_BROTHERS__DOO_DOO_BROWN",
+      "artist": "2 Hyped Brothers",
+      "title": "Doo Doo Brown",
+      "primary_year": 1992
+    },
+    {
+      "song_id": "2_IN_A_ROOM__EL_TRAGO_THE_DRINK",
+      "artist": "2 In A Room",
+      "title": "El Trago (The Drink)",
+      "primary_year": 1994
+    },
+    {
+      "song_id": "2_IN_A_ROOM__WIGGLE_IT",
+      "artist": "2 In A Room",
+      "title": "Wiggle It",
+      "primary_year": 1990
+    },
+    {
+      "song_id": "2_OF_CLUBS__WALK_TALL",
+      "artist": "2 Of Clubs",
+      "title": "Walk Tall",
+      "primary_year": 1967
+    },
+    {
+      "song_id": "2_PISTOLS__SHE_GOT_IT",
+      "artist": "2 Pistols",
+      "title": "She Got It",
+      "primary_year": 2008
+    },
+    {
+      "song_id": "30_SECONDS_TO_MARS__FROM_YESTERDAY",
+      "artist": "30 Seconds To Mars",
+      "title": "From Yesterday",
+      "primary_year": 2007
+    },
+    {
+      "song_id": "30_SECONDS_TO_MARS__THE_KILL_BURY_ME",
+      "artist": "30 Seconds To Mars",
+      "title": "The Kill (Bury Me)",
+      "primary_year": 2006
+    },
+    {
+      "song_id": "310BABII__SOAK_CITY",
+      "artist": "310babii",
+      "title": "Soak City",
+      "primary_year": 2023
+    },
+    {
+      "song_id": "38_SPECIAL__FANTASY_GIRL",
+      "artist": "38 Special",
+      "title": "Fantasy Girl",
+      "primary_year": 1981
+    },
+    {
+      "song_id": "38_SPECIAL__ROCKIN_INTO_THE_NIGHT",
+      "artist": "38 Special",
+      "title": "Rockin' Into The Night",
+      "primary_year": 1980
+    },
+    {
+      "song_id": "38_SPECIAL__TEACHER_TEACHER",
+      "artist": "38 Special",
+      "title": "Teacher Teacher",
+      "primary_year": 1984
+    },
+    {
+      "song_id": "38_SPECIAL__THE_SOUND_OF_YOUR_VOICE",
+      "artist": "38 Special",
+      "title": "The Sound Of Your Voice",
+      "primary_year": 1991
+    },
+    {
+      "song_id": "38_SPECIAL__YOU_KEEP_RUNNIN_AWAY",
+      "artist": "38 Special",
+      "title": "You Keep Runnin' Away",
+      "primary_year": 1982
+    },
+    {
+      "song_id": "3LW__I_DO_WANNA_GET_CLOSE_TO_YOU",
+      "artist": "3lw",
+      "title": "I Do (Wanna Get Close To You)",
+      "primary_year": 2002
+    },
+    {
+      "song_id": "3LW__NO_MORE_BABY_I_MA_DO_RIGHT",
+      "artist": "3lw",
+      "title": "No More (Baby I'ma Do Right)",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "3LW__PLAYAS_GON_PLAY",
+      "artist": "3lw",
+      "title": "Playas Gon' Play",
+      "primary_year": 2001
+    },
+    {
+      "song_id": "3OH_3__DEJA_VU",
+      "artist": "3oh!3",
+      "title": "Deja Vu",
+      "primary_year": 2010
+    },
+    {
+      "song_id": "3OH_3__DON_T_TRUST_ME",
+      "artist": "3oh!3",
+      "title": "Don't Trust Me",
+      "primary_year": 2008
+    },
+    {
+      "song_id": "3OH_3__FOLLOW_ME_DOWN",
+      "artist": "3oh!3",
+      "title": "Follow Me Down",
+      "primary_year": 2010
+    },
+    {
+      "song_id": "3OH_3__HIT_IT_AGAIN",
+      "artist": "3oh!3",
+      "title": "Hit It Again",
+      "primary_year": 2011
+    },
+    {
+      "song_id": "3OH_3__I_CAN_DO_ANYTHING",
+      "artist": "3oh!3",
+      "title": "I Can Do Anything",
+      "primary_year": 2010
+    },
+    {
+      "song_id": "3OH_3__MY_FIRST_KISS",
+      "artist": "3oh!3",
+      "title": "My First Kiss",
+      "primary_year": 2010
+    },
+    {
+      "song_id": "3OH_3__SET_YOU_FREE",
+      "artist": "3oh!3",
+      "title": "Set You Free",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "3OH_3__STARSTRUKK",
+      "artist": "3oh!3",
+      "title": "Starstrukk",
+      "primary_year": 2009
+    },
+    {
+      "song_id": "3RD_PARTY__CAN_U_FEEL_IT",
+      "artist": "3rd Party",
+      "title": "Can U Feel It",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "3RD_PARTY__LOVE_IS_ALIVE",
+      "artist": "3rd Party",
+      "title": "Love Is Alive",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "3T__ANYTHING",
+      "artist": "3t",
+      "title": "Anything",
+      "primary_year": 1995
+    },
+    {
+      "song_id": "3_DOORS_DOWN__AWAY_FROM_THE_SUN",
+      "artist": "3 Doors Down",
+      "title": "Away From The Sun",
+      "primary_year": 2004
+    },
+    {
+      "song_id": "3_DOORS_DOWN__BE_LIKE_THAT",
+      "artist": "3 Doors Down",
+      "title": "Be Like That",
+      "primary_year": 2001
+    },
+    {
+      "song_id": "3_DOORS_DOWN__CITIZEN_SOLDIER",
+      "artist": "3 Doors Down",
+      "title": "Citizen/Soldier",
+      "primary_year": 2008
+    },
+    {
+      "song_id": "3_DOORS_DOWN__IT_S_NOT_MY_TIME",
+      "artist": "3 Doors Down",
+      "title": "It's Not My Time",
+      "primary_year": 2008
+    },
+    {
+      "song_id": "3_DOORS_DOWN__LET_ME_GO",
+      "artist": "3 Doors Down",
+      "title": "Let Me Go",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "3_DOORS_DOWN__LOSER",
+      "artist": "3 Doors Down",
+      "title": "Loser",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "3_DOORS_DOWN__WHEN_I_M_GONE",
+      "artist": "3 Doors Down",
+      "title": "When I'm Gone",
+      "primary_year": 2002
+    },
+    {
+      "song_id": "3_DOORS_DOWN__WHEN_YOU_RE_YOUNG",
+      "artist": "3 Doors Down",
+      "title": "When You're Young",
+      "primary_year": 2011
+    },
+    {
+      "song_id": "3_MAN_ISLAND__JACK_THE_LAD",
+      "artist": "3 Man Island",
+      "title": "Jack The Lad",
+      "primary_year": 1988
+    },
+    {
+      "song_id": "42_DUGG__4_DA_GANG",
+      "artist": "42 Dugg",
+      "title": "4 Da Gang",
+      "primary_year": 2021
+    },
+    {
+      "song_id": "42_DUGG__MAYBACH",
+      "artist": "42 Dugg",
+      "title": "Maybach",
+      "primary_year": 2021
+    },
+    {
+      "song_id": "42_DUGG__THUMP_SHIT",
+      "artist": "42 Dugg",
+      "title": "Thump Shit",
+      "primary_year": 2022
+    },
+    {
+      "song_id": "49_ERS__DON_T_YOU_LOVE_ME",
+      "artist": "49-ers",
+      "title": "Don't You Love Me",
+      "primary_year": 1990
+    },
+    {
+      "song_id": "4BATZ__ACT_II_DATE_8",
+      "artist": "4batz",
+      "title": "Act II: Date @ 8",
+      "primary_year": 2024
+    },
+    {
+      "song_id": "4PM__SUKIYAKI",
+      "artist": "4pm",
+      "title": "Sukiyaki",
+      "primary_year": 1994
+    },
+    {
+      "song_id": "4_0__HAVE_A_LITTLE_MERCY",
+      "artist": "4.0",
+      "title": "Have A Little Mercy",
+      "primary_year": 1997
+    },
+    {
+      "song_id": "4_BY_FOUR__WANT_YOU_FOR_MY_GIRLFRIEND",
+      "artist": "4 By Four",
+      "title": "Want You For My Girlfriend",
+      "primary_year": 1987
+    },
+    {
+      "song_id": "4_THE_CAUSE__STAND_BY_ME",
+      "artist": "4 The Cause",
+      "title": "Stand By Me",
+      "primary_year": 1998
+    },
+    {
+      "song_id": "4_TOWN__NOBODY_LIKE_U",
+      "artist": "4*town",
+      "title": "Nobody Like U",
+      "primary_year": 2022
+    },
+    {
+      "song_id": "5000_VOLTS__I_M_ON_FIRE",
+      "artist": "5000 Volts",
+      "title": "I'm On Fire",
+      "primary_year": 1975
+    },
+    {
+      "song_id": "504_BOYZ__WOBBLE_WOBBLE",
+      "artist": "504 Boyz",
+      "title": "Wobble Wobble",
+      "primary_year": 2000
+    },
+    {
+      "song_id": "50_CENT_OLIVIA__BEST_FRIEND",
+      "artist": "50 Cent & Olivia",
+      "title": "Best Friend",
+      "primary_year": 2006
+    },
+    {
+      "song_id": "50_CENT__21_QUESTIONS",
+      "artist": "50 Cent",
+      "title": "21 Questions",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "50_CENT__AYO_TECHNOLOGY",
+      "artist": "50 Cent",
+      "title": "Ayo Technology",
+      "primary_year": 2007
+    },
+    {
+      "song_id": "50_CENT__BABY_BY_ME",
+      "artist": "50 Cent",
+      "title": "Baby By Me",
+      "primary_year": 2009
+    },
+    {
+      "song_id": "50_CENT__BEST_FRIEND",
+      "artist": "50 Cent",
+      "title": "Best Friend",
+      "primary_year": 2006
+    },
+    {
+      "song_id": "50_CENT__DISCO_INFERNO",
+      "artist": "50 Cent",
+      "title": "Disco Inferno",
+      "primary_year": 2004
+    },
+    {
+      "song_id": "50_CENT__GET_UP",
+      "artist": "50 Cent",
+      "title": "Get Up",
+      "primary_year": 2008
+    },
+    {
+      "song_id": "50_CENT__HUSTLER_S_AMBITION",
+      "artist": "50 Cent",
+      "title": "Hustler's Ambition",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "50_CENT__IF_I_CAN_T",
+      "artist": "50 Cent",
+      "title": "If I Can't",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "50_CENT__I_GET_IT_IN",
+      "artist": "50 Cent",
+      "title": "I Get It In",
+      "primary_year": 2009
+    },
+    {
+      "song_id": "50_CENT__I_GET_MONEY",
+      "artist": "50 Cent",
+      "title": "I Get Money",
+      "primary_year": 2007
+    },
+    {
+      "song_id": "50_CENT__MY_LIFE",
+      "artist": "50 Cent",
+      "title": "My Life",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "50_CENT__NEW_DAY",
+      "artist": "50 Cent",
+      "title": "New Day",
+      "primary_year": 2012
+    },
+    {
+      "song_id": "50_CENT__OUTLAW",
+      "artist": "50 Cent",
+      "title": "Outlaw",
+      "primary_year": 2011
+    },
+    {
+      "song_id": "50_CENT__OUTTA_CONTROL",
+      "artist": "50 Cent",
+      "title": "Outta Control",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "50_CENT__OUTTA_CONTROL_REMIX",
+      "artist": "50 Cent",
+      "title": "Outta Control (Remix)",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "50_CENT__PIGGY_BANK",
+      "artist": "50 Cent",
+      "title": "Piggy Bank",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "50_CENT__P_I_M_P",
+      "artist": "50 Cent",
+      "title": "P.I.M.P.",
+      "primary_year": 2003
+    },
+    {
+      "song_id": "50_CENT__STILL_WILL",
+      "artist": "50 Cent",
+      "title": "Still Will",
+      "primary_year": 2007
+    },
+    {
+      "song_id": "50_CENT__STRAIGHT_TO_THE_BANK",
+      "artist": "50 Cent",
+      "title": "Straight To The Bank",
+      "primary_year": 2007
+    },
+    {
+      "song_id": "50_CENT__THE_INVITATION",
+      "artist": "50 Cent",
+      "title": "The Invitation",
+      "primary_year": 2009
+    },
+    {
+      "song_id": "50_CENT__WANKSTA",
+      "artist": "50 Cent",
+      "title": "Wanksta",
+      "primary_year": 2002
+    },
+    {
+      "song_id": "50_CENT__WINDOW_SHOPPER",
+      "artist": "50 Cent",
+      "title": "Window Shopper",
+      "primary_year": 2005
+    },
+    {
+      "song_id": "5_SATINS__SHADOWS",
+      "artist": "5 Satins",
+      "title": "Shadows",
+      "primary_year": 1959
+    },
+    {
+      "song_id": "5_SECONDS_OF_SUMMER__COMPLETE_MESS",
+      "artist": "5 Seconds Of Summer",
+      "title": "Complete Mess",
+      "primary_year": 2022
+    },
+    {
+      "song_id": "5_SECONDS_OF_SUMMER__DON_T_STOP",
+      "artist": "5 Seconds Of Summer",
+      "title": "Don't Stop",
+      "primary_year": 2014
+    },
+    {
+      "song_id": "5_SECONDS_OF_SUMMER__EVERYTHING_I_DIDN_T_SAY",
+      "artist": "5 Seconds Of Summer",
+      "title": "Everything I Didn't Say",
+      "primary_year": 2014
+    }
+  ]
+}

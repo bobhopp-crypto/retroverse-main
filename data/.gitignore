@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Runtime outputs
+exports/
+output/
+logs/
+snapshots/
+staging-area/
+backups/
+
+# Generated assets
+public/thumbnails/
+
+# Local config
+.env

@@ -1,0 +1,247 @@
+{
+  "summary": {
+    "total_songs": 32239,
+    "songs_with_any_candidates": 4130,
+    "songs_with_high_confidence": 3866,
+    "songs_with_medium_confidence": 122,
+    "songs_with_no_candidates": 28109
+  },
+  "examples": {
+    "high": [
+      {
+        "song": "10cc \u2014 Dreadlock Holiday",
+        "candidates": [
+          {
+            "video_title": "Dreadlock Holiday",
+            "video_artist": "10cc",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "10cc \u2014 I'm Not In Love",
+        "candidates": [
+          {
+            "video_title": "I'm Not In Love",
+            "video_artist": "10cc",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "10,000 Maniacs \u2014 Like The Weather",
+        "candidates": [
+          {
+            "video_title": "Like the Weather",
+            "video_artist": "10,000 Maniacs",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "10,000 Maniacs \u2014 These Are Days",
+        "candidates": [
+          {
+            "video_title": "These Are The Days",
+            "video_artist": "10,000 Maniacs",
+            "confidence": "high",
+            "score": 0.875
+          }
+        ]
+      },
+      {
+        "song": "10,000 Maniacs \u2014 Trouble Me",
+        "candidates": [
+          {
+            "video_title": "Trouble Me",
+            "video_artist": "10,000 Maniacs",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "112 \u2014 Dance With Me",
+        "candidates": [
+          {
+            "video_title": "Dance With Me",
+            "video_artist": "112",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "20 Fingers \u2014 Short Dick Man",
+        "candidates": [
+          {
+            "video_title": "Short Dick Man",
+            "video_artist": "20 Fingers",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "2 Unlimited \u2014 Get Ready For This",
+        "candidates": [
+          {
+            "video_title": "Get Ready For This",
+            "video_artist": "2 Unlimited",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "2 Unlimited \u2014 Twilight Zone",
+        "candidates": [
+          {
+            "video_title": "Twilight Zone",
+            "video_artist": "2 Unlimited",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      },
+      {
+        "song": "311 \u2014 Love Song",
+        "candidates": [
+          {
+            "video_title": "Love Song",
+            "video_artist": "311",
+            "confidence": "high",
+            "score": 1.0
+          }
+        ]
+      }
+    ],
+    "medium": [
+      {
+        "song": "Abc \u2014 The Look Of Love (Part One)",
+        "candidates": [
+          {
+            "video_title": "The Look Of Love",
+            "video_artist": "ABC",
+            "confidence": "medium",
+            "score": 0.78
+          }
+        ]
+      },
+      {
+        "song": "Alanis Morissette \u2014 You Learn/You Oughta Know",
+        "candidates": [
+          {
+            "video_title": "You Oughta Know",
+            "video_artist": "Alanis Morissette",
+            "confidence": "medium",
+            "score": 0.769
+          }
+        ]
+      },
+      {
+        "song": "Alessia Cara \u2014 How Far I'll Go",
+        "candidates": [
+          {
+            "video_title": "How Far I",
+            "video_artist": "Alessia Cara",
+            "confidence": "medium",
+            "score": 0.783
+          }
+        ]
+      },
+      {
+        "song": "Alice Cooper \u2014 Eighteen",
+        "candidates": [
+          {
+            "video_title": "I'm Eighteen",
+            "video_artist": "Alice Cooper",
+            "confidence": "medium",
+            "score": 0.842
+          }
+        ]
+      },
+      {
+        "song": "Alicia Keys \u2014 Empire State Of Mind (Part II) Broken Down",
+        "candidates": [
+          {
+            "video_title": "Empire State Of Mind (Part II)",
+            "video_artist": "Alicia Keys",
+            "confidence": "medium",
+            "score": 0.824
+          }
+        ]
+      },
+      {
+        "song": "Alvin And The Chipmunks \u2014 Witch Doctor (2007)",
+        "candidates": [
+          {
+            "video_title": "Witch Doctor",
+            "video_artist": "Alvin And The Chipmunks",
+            "confidence": "medium",
+            "score": 0.828
+          }
+        ]
+      },
+      {
+        "song": "Andrea True Connection \u2014 More, More, More Pt. 1",
+        "candidates": [
+          {
+            "video_title": "More, More, More",
+            "video_artist": "Andrea True Connection",
+            "confidence": "medium",
+            "score": 0.848
+          }
+        ]
+      },
+      {
+        "song": "Auli'i Cravalho \u2014 How Far I'll Go",
+        "candidates": [
+          {
+            "video_title": "How Far I",
+            "video_artist": "Auli'i Cravalho",
+            "confidence": "medium",
+            "score": 0.783
+          }
+        ]
+      },
+      {
+        "song": "Bee Gees \u2014 One",
+        "candidates": [
+          {
+            "video_title": "Alone",
+            "video_artist": "Bee Gees",
+            "confidence": "medium",
+            "score": 0.75
+          }
+        ]
+      },
+      {
+        "song": "Bee Gees \u2014 Stayin' Alive",
+        "candidates": [
+          {
+            "video_title": "Staying Alive (Mix)",
+            "video_artist": "Bee Gees",
+            "confidence": "medium",
+            "score": 0.828
+          }
+        ]
+      }
+    ],
+    "none": [
+      "100 Proof Aged In Soul \u2014 Everything Good Is Bad",
+      "100 Proof Aged In Soul \u2014 One Man's Leftovers (Is Another Man's Feast)",
+      "100 Proof Aged In Soul \u2014 Somebody's Been Sleeping",
+      "100 Proof Aged In Soul \u2014 Too Many Cooks (Spoil The Soup)",
+      "100 Strings And Jono \u2014 I Need You Now",
+      "10cc \u2014 Art For Art's Sake",
+      "10cc \u2014 For You And I",
+      "10cc \u2014 Good Morning Judge",
+      "10cc \u2014 I'm Mandy Fly Me",
+      "10cc \u2014 People In Love"
+    ]
+  }
+}

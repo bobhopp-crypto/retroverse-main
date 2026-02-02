@@ -1,0 +1,36 @@
+#!/bin/bash
+# RetroVerse Updater.app launcher
+# Changes to project directory and launches the GUI
+
+# Get the directory where this script lives (inside the .app bundle)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Navigate to project root (go up from Contents/MacOS)
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
+# Change to project directory
+cd "$PROJECT_ROOT" || {
+    osascript -e 'display dialog "Error: Could not find retroverse-data project directory." buttons {"OK"} default button "OK" with icon stop'
+    exit 1
+}
+
+# Set PATH to include Homebrew binaries (needed for ffprobe/ffmpeg)
+# Dock-launched apps don't inherit shell PATH, so we set it explicitly
+export PATH="/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Check if Python executable exists
+PYTHON="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3"
+if [ ! -f "$PYTHON" ]; then
+    osascript -e 'display dialog "Error: Python not found at /Library/Frameworks/Python.framework/Versions/3.12/bin/python3" buttons {"OK"} default button "OK" with icon stop'
+    exit 1
+fi
+
+# Check if GUI script exists
+GUI_SCRIPT="$PROJECT_ROOT/scripts/rv_updater_gui.py"
+if [ ! -f "$GUI_SCRIPT" ]; then
+    osascript -e "display dialog \"Error: GUI script not found at $GUI_SCRIPT\" buttons {\"OK\"} default button \"OK\" with icon stop"
+    exit 1
+fi
+
+# Launch the GUI using Python.org Python (native ARM64 with tkinter)
+# PATH is exported so subprocess calls will find Homebrew binaries
+exec "$PYTHON" "$GUI_SCRIPT"
