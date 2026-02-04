@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function ToolsLanding() {
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12"
+      className="rv-page min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12"
       style={{ background: 'var(--rv-color-navy)' }}
     >
       <h1

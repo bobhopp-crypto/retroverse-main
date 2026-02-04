@@ -3,14 +3,14 @@
  * Mobile-first; does not override existing layout rules.
  */
 :root {
-  /* Colors */
-  --rv-color-navy: #0B0D17;
-  --rv-color-gold: #F8D17A;
-  --rv-color-mint: #A6E3E9;
-  --rv-color-coral: #FF8B7B;
-  --rv-color-butter: #FFE8A3;
+  /* Colors — RetroVerse Pastel */
+  --rv-color-navy: #FFF7ED; /* Cream base */
+  --rv-color-gold: #FFD88A; /* Butter yellow */
+  --rv-color-mint: #C7F2D5; /* Mint */
+  --rv-color-coral: #FFB2A6; /* Coral */
+  --rv-color-butter: #FFECC7; /* Pale butter */
   --rv-color-white: #FFFFFF;
-  --rv-color-black: #000000;
+  --rv-color-black: #1F1A24; /* Charcoal for contrast */
 
   /* Radii */
   --rv-radius-sm: 6px;
@@ -41,18 +41,18 @@
   --rv-text-xl: 1.25rem;
   --rv-text-2xl: 1.5rem;
 
-  /* Video Library semantic (same palette as vars for migration) */
-  --rv-bg-base: #1A1510;
-  --rv-bg-panel: #241E18;
-  --rv-bg-hover: #2E2620;
-  --rv-bg-drag: #3C3120;
-  --rv-border: #3C3129;
-  --rv-text: #F5ECD7;
-  --rv-text-muted: #C7BBA7;
-  --rv-focus: #E8D29A;
-  --rv-chip-selected: #E3C47C;
-  --rv-accent: #A6765B;
-  --rv-accent-hover: #B5846B;
+  /* Video Library semantic (pastel cream theme) */
+  --rv-bg-base: #FFF7ED; /* Cream canvas */
+  --rv-bg-panel: #FFFBF4; /* Soft panel */
+  --rv-bg-hover: #E9F6F1; /* Mint wash */
+  --rv-bg-drag: #DFF1EC; /* Teal lift */
+  --rv-border: #E6DCCF; /* Warm line */
+  --rv-text: #242430; /* Ink */
+  --rv-text-muted: #6E6878; /* Soft graphite */
+  --rv-focus: #7CD2CA; /* Aqua focus */
+  --rv-chip-selected: #FFD1BF; /* Coral butter */
+  --rv-accent: #7CD2CA; /* Soft teal */
+  --rv-accent-hover: #5FC0B8;
 }
 
 /* Utility classes */
@@ -64,17 +64,67 @@
 }
 
 .rv-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   padding: 0.75rem 1.25rem;
   border-radius: var(--rv-radius-md);
   font-weight: 600;
   cursor: pointer;
   font-family: var(--rv-font-family);
   border: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 220ms ease, box-shadow 220ms ease, filter 200ms ease;
 }
 
 .rv-btn:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(31, 26, 36, 0.14);
+}
+
+.rv-btn:active {
+  transform: translateY(0px) scale(0.995);
+  box-shadow: 0 8px 18px rgba(31, 26, 36, 0.18);
+  filter: saturate(1.05);
+}
+
+.rv-btn:focus-visible {
+  outline: 2px solid var(--rv-color-mint);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(199, 242, 213, 0.35);
+}
+
+.rv-btn::before {
+  content: "";
+  position: absolute;
+  inset: -12% -24%;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 248, 224, 0.6), transparent 35%),
+    radial-gradient(circle at 80% 40%, rgba(199, 242, 213, 0.35), transparent 32%),
+    linear-gradient(120deg, rgba(255, 216, 138, 0.55), rgba(199, 242, 213, 0.35));
+  opacity: 0;
+  transform: translateY(10%);
+  transition: opacity 260ms ease, transform 300ms ease;
+  z-index: 0;
+}
+
+.rv-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+  opacity: 0.2;
+  transform: translateX(-110%);
+  transition: transform 360ms ease;
+  z-index: 0;
+}
+
+.rv-btn:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rv-btn:hover::after {
+  transform: translateX(110%);
 }
 
 .rv-btn-gold {
