@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist-pipeline",
+    "rootDir": ".",
+    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/pipeline.tsbuildinfo",
+    "composite": true,
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "moduleResolution": "node16",
+    "module": "node16",
+    "target": "ES2022",
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
+  },
+  "include": ["pipeline/**/*.ts", "src/lib/media/thumbnail.ts"],
+  "exclude": ["node_modules", "dist"]
+}

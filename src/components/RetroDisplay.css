@@ -1,0 +1,208 @@
+.retro-display-shell {
+  --retro-display-frame: #f8f1de;
+  --retro-display-border: #1b1b1b;
+  --retro-display-window-bg: #cfe6df;
+  --retro-display-text: #3c3a36;
+  --retro-display-text-secondary: #4f4d47;
+  --retro-display-window-height: 66px;
+  --retro-display-line-gap: 2px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2px auto 12px;
+  padding: clamp(8px, 1.8vw, 12px) clamp(10px, 2vw, 14px);
+  border: 3px solid var(--retro-display-border);
+  border-radius: 18px;
+  background: var(--retro-display-frame);
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45), inset 0 -2px 0 rgba(0, 0, 0, 0.14), 0 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.retro-display-window {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 140px;
+  height: var(--retro-display-window-height);
+  border-radius: 12px;
+  background: var(--retro-display-window-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--retro-display-line-gap);
+  padding: clamp(8px, 1.5vw, 12px) clamp(14px, 2vw, 18px);
+  box-shadow: inset 0 0 0 2px var(--retro-display-border), inset 0 10px 16px rgba(255, 255, 255, 0.26), inset 0 -8px 12px rgba(0, 0, 0, 0.08);
+}
+
+.retro-display-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(27, 27, 27, 0.08) 0 1px, rgba(27, 27, 27, 0) 1px 3px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.retro-display-window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(95, 183, 168, 0.18) 0%,
+    rgba(95, 183, 168, 0.05) 40%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+.retro-display-line {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: #5fb7a8;
+  text-shadow: 0 0 2px rgba(95, 183, 168, 0.6), 0 0 6px rgba(95, 183, 168, 0.5), 0 0 14px rgba(95, 183, 168, 0.35);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease-out, transform 160ms ease-out;
+}
+
+.retro-display-line .retro-slot-display {
+  color: inherit;
+  text-shadow: inherit;
+}
+
+.retro-display-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.retro-display-primary {
+  font-size: clamp(1.24rem, 4.2vw, 1.9rem);
+}
+
+.retro-display-secondary {
+  font-size: clamp(0.92rem, 3.2vw, 1.16rem);
+}
+
+.retro-display-tertiary {
+  font-size: clamp(0.78rem, 2.8vw, 0.94rem);
+}
+
+.retro-display-line.is-pulse {
+  animation: retroDisplayPulse 170ms ease-out;
+}
+
+.retro-display-shell--compact {
+  --retro-display-window-height: 52px;
+  --retro-display-line-gap: 0;
+}
+
+.retro-display-shell--standard {
+  --retro-display-window-height: 66px;
+  --retro-display-line-gap: 2px;
+}
+
+.retro-display-shell--extended {
+  --retro-display-window-height: 82px;
+  --retro-display-line-gap: 2px;
+}
+
+.retro-display-shell--inline {
+  --retro-display-window-height: 44px;
+  --retro-display-line-gap: 0;
+  padding: 6px 10px;
+  border-width: 2px;
+  box-shadow: none;
+}
+
+.retro-display-shell--inline .retro-display-window {
+  box-shadow: inset 0 0 0 2px var(--retro-display-border);
+  padding: 6px 12px;
+}
+
+.retro-display-shell--inline .retro-display-primary {
+  font-size: clamp(1rem, 3.8vw, 1.4rem);
+}
+
+.retro-display-shell--inline .retro-display-secondary {
+  font-size: clamp(0.75rem, 2.8vw, 0.9rem);
+}
+
+.retro-display-shell--compact .retro-display-primary {
+  font-size: clamp(1.36rem, 4.8vw, 2.02rem);
+}
+
+.retro-display-shell--extended .retro-display-primary {
+  font-size: clamp(1.08rem, 3.7vw, 1.52rem);
+}
+
+.retro-display-shell--extended .retro-display-secondary {
+  font-size: clamp(0.84rem, 2.95vw, 1rem);
+}
+
+.retro-display-shell--extended .retro-display-tertiary {
+  font-size: clamp(0.72rem, 2.45vw, 0.9rem);
+}
+
+.retro-display-shell--glass .retro-display-window {
+  background: radial-gradient(125% 150% at 50% 18%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 42%), var(--retro-display-window-bg);
+}
+
+.retro-display-shell--plastic .retro-display-window {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.04) 30%), var(--retro-display-window-bg);
+}
+
+.retro-display-shell--plastic .retro-display-window::before {
+  opacity: 0.2;
+}
+
+.retro-display-shell--metal .retro-display-window {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 45%), var(--retro-display-window-bg);
+}
+
+.retro-display-shell--metal .retro-display-window::before {
+  opacity: 0.18;
+}
+
+@keyframes retroDisplayPulse {
+  0% {
+    transform: translateY(0) scale(0.985);
+  }
+  60% {
+    transform: translateY(0) scale(1.012);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .retro-display-shell {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .retro-display-shell--compact {
+    --retro-display-window-height: 48px;
+  }
+
+  .retro-display-shell--standard {
+    --retro-display-window-height: 60px;
+  }
+
+  .retro-display-shell--extended {
+    --retro-display-window-height: 74px;
+  }
+}

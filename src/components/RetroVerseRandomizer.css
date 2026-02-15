@@ -1,0 +1,457 @@
+.rv-randomizer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  display: grid;
+  place-items: center;
+}
+
+.rv-randomizer-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(12, 13, 14, 0.38);
+}
+
+.rv-randomizer-shell {
+  position: relative;
+  max-height: 94vh;
+  border: 4px solid var(--rv-ink-primary, #1b1b1b);
+  border-radius: 24px;
+  background: linear-gradient(145deg, var(--rv-panel-cream, #efe6cf), var(--rv-inner-panel, #e4d9be));
+  padding: 18px 14px 14px;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 0 rgba(0, 0, 0, 0.22);
+}
+
+.rv-randomizer-title {
+  margin: 0 auto 10px;
+  width: min(92vw, 560px);
+  text-align: center;
+  color: var(--rv-ink-primary, #1b1b1b);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.35px;
+}
+
+.rv-randomizer-tm {
+  font-size: 0.52em;
+  vertical-align: super;
+  position: relative;
+  top: -0.12em;
+  letter-spacing: 0.1px;
+}
+
+.rv-randomizer-stage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 14px;
+  border: 3px solid var(--rv-ink-primary, #1b1b1b);
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 40%, var(--rv-base-cream, #f8f1de), var(--rv-inner-panel, #e4d9be) 70%);
+  overflow: hidden;
+  transform-origin: center;
+}
+
+.rv-randomizer-stage.is-squash {
+  animation: rvCardboardSquash 80ms linear;
+}
+
+.rv-randomizer-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rv-arrow-anim {
+  transform-origin: 250px 20px;
+  animation: rvArrowBounce 0.8s ease-in-out infinite;
+}
+
+.rv-arrow-shape {
+  fill: #f4dfb9;
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 2.4px;
+  vector-effect: non-scaling-stroke;
+}
+
+.rv-label {
+  font-family: 'Comic Neue', sans-serif;
+  font-weight: 700;
+  fill: #000000;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 1.8px;
+}
+
+.wedge path {
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 3px;
+  vector-effect: non-scaling-stroke;
+}
+
+.rv-randomizer-slice {
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 1.25px;
+  transition: stroke 90ms linear, stroke-width 90ms linear, filter 90ms linear;
+}
+
+.rv-randomizer-slice.state-idle {
+  filter: brightness(0.9);
+}
+
+.rv-randomizer-slice.state-trail {
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 2.3px;
+  filter: brightness(0.96);
+}
+
+.rv-randomizer-slice.state-active {
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 3.2px;
+  filter: brightness(1.18) drop-shadow(0 3px 0 rgba(0, 0, 0, 0.32));
+}
+
+.rv-randomizer-slice.state-active.is-settled {
+  fill: #fff !important;
+  stroke-width: 3.4px;
+  filter: brightness(1.12) drop-shadow(0 2px 0 rgba(0, 0, 0, 0.28)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+.rv-randomizer-slice.rv-selected-segment {
+  fill: currentColor !important;
+  stroke-width: 3px;
+  opacity: 1;
+  filter: brightness(1.06) saturate(1.03) drop-shadow(0 0 5px currentColor) drop-shadow(0 0 9px rgba(247, 216, 165, 0.44));
+  animation: rvSelectedSegmentPulse 1.25s ease-in-out infinite;
+}
+
+.rv-spin-glow {
+  filter: brightness(1.22);
+}
+
+.rv-randomizer-slice.is-manual-selected {
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 2.6px;
+  filter: brightness(1.08);
+}
+
+.rv-randomizer-clickable {
+  cursor: pointer;
+}
+
+.rv-shine-layer {
+  opacity: 0.68;
+  pointer-events: none;
+  transition: opacity 300ms ease-out;
+}
+
+.rv-shine-layer.is-fading {
+  opacity: 0;
+}
+
+.wedge.rv-reveal-dim {
+  opacity: 0.6;
+}
+
+.wedge.rv-reveal-selected.rv-reveal-up {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1.1);
+  transition: transform 220ms ease-out;
+}
+
+.wedge.rv-reveal-selected.rv-reveal-back {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1);
+  transition: transform 220ms ease-out;
+}
+
+.rv-randomizer-slice-text {
+  fill: #121212;
+  font-size: 8.9px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  paint-order: stroke fill;
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-width: 0.9px;
+}
+
+.rv-randomizer-slice-text.state-active {
+  font-weight: 900;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 1.25px;
+}
+
+.rv-randomizer-slice-text.state-trail {
+  fill: #1c1c1c;
+  stroke: rgba(255, 255, 255, 0.52);
+}
+
+.rv-randomizer-slice-text.is-dark {
+  fill: #f5f5f5;
+  stroke: rgba(0, 0, 0, 0.45);
+}
+
+.rv-tier-text {
+  font-size: 8.6px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--rv-ink-primary, #1b1b1b);
+  stroke-width: 0.65px;
+  letter-spacing: 0.25px;
+}
+
+.rv-tier-label {
+  font-weight: 700;
+  fill: var(--rv-ink-primary, #1b1b1b);
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.rv-randomizer-medallion {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 142px;
+  height: 142px;
+  margin-left: -71px;
+  margin-top: -71px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  z-index: 5;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28);
+}
+
+.rv-randomizer-medallion:disabled {
+  cursor: default;
+}
+
+.rv-randomizer-medallion-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.rv-logo-breathing {
+  animation: rvLogoBreathing 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.rv-randomizer-stage.rv-rim-wobble {
+  border-width: 3px;
+  transform-origin: center;
+}
+
+.rv-randomizer-svg > .rv-rim-wobble {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rvRimWobble 250ms ease-out 1;
+}
+
+.rv-randomizer-stage.rv-rim-wobble::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px solid rgba(17, 17, 17, 0.45);
+  border-radius: 16px;
+  pointer-events: none;
+  animation: rvRimThicknessWobble 250ms ease-out 1;
+}
+
+.rv-rim-wobble .rv-randomizer-slice {
+  animation: rvRimSliceThicken 250ms ease-out 1;
+}
+
+.rv-ink-jitter-border {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rvInkJitter 1.8s linear infinite;
+}
+
+.rv-randomizer-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.rv-randomizer-clear,
+.rv-randomizer-close {
+  border: 2px solid var(--rv-ink-primary, #1b1b1b);
+  border-radius: 11px;
+  background: var(--rv-panel-cream, #efe6cf);
+  color: var(--rv-ink-primary, #1b1b1b);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.25px;
+  padding: 9px 10px;
+  cursor: pointer;
+}
+
+.rv-randomizer-clear:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+@keyframes rvCardboardSquash {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.98, 1.02);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rvLabelPop {
+  0% {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(1.18);
+  }
+  100% {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(1);
+  }
+}
+
+@keyframes rvArrowBounce {
+  0% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  35% {
+    transform: translateY(-2px) scaleY(1.03) scaleX(0.98);
+  }
+  68% {
+    transform: translateY(0) scaleY(0.94) scaleX(1.04);
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes rvSelectedSegmentPulse {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes rvRimWobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(1.5deg);
+  }
+  70% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rvRimThicknessWobble {
+  0% {
+    border-width: 2px;
+  }
+  45% {
+    border-width: 3px;
+  }
+  100% {
+    border-width: 2px;
+  }
+}
+
+@keyframes rvRimSliceThicken {
+  0% {
+    stroke-width: 1.25px;
+  }
+  45% {
+    stroke-width: 2.7px;
+  }
+  100% {
+    stroke-width: 1.25px;
+  }
+}
+
+@keyframes rvInkJitter {
+  0% {
+    transform: translate(0.6px, -0.5px);
+  }
+  20% {
+    transform: translate(-0.7px, 0.4px);
+  }
+  40% {
+    transform: translate(0.3px, 0.8px);
+  }
+  60% {
+    transform: translate(-0.9px, -0.3px);
+  }
+  80% {
+    transform: translate(0.8px, 0.1px);
+  }
+  100% {
+    transform: translate(-0.4px, -0.7px);
+  }
+}
+
+@keyframes rvLogoBreathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .rv-randomizer-shell {
+    width: min(98vw, 480px) !important;
+    padding: 10px;
+  }
+
+  .rv-randomizer-title {
+    width: min(94vw, 420px);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .rv-randomizer-slice-text {
+    font-size: 7.5px;
+  }
+
+  .rv-tier-text {
+    font-size: 7.4px;
+  }
+
+  .rv-randomizer-medallion {
+    width: 122px;
+    height: 122px;
+    margin-left: -61px;
+    margin-top: -61px;
+  }
+}

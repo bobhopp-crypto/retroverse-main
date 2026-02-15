@@ -1,0 +1,14 @@
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Video thumbnail placeholder">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfe8f3" />
+      <stop offset="50%" stop-color="#e9f5ed" />
+      <stop offset="100%" stop-color="#fbe6de" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" rx="16" fill="url(#grad)" />
+  <g fill="none" stroke="#8aa3b8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="48" width="180" height="96" rx="10" />
+    <path d="M183 84l39-22v56l-39-22z" />
+  </g>
+</svg>

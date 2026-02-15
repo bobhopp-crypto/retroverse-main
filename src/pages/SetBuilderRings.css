@@ -1,0 +1,198 @@
+.sb-container {
+  display: grid;
+  gap: 16px;
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 16px;
+  color: #f7efe1;
+}
+
+.sb-header {
+  display: grid;
+  gap: 10px;
+}
+
+.sb-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  letter-spacing: 0.08em;
+}
+
+.sb-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.sb-ring-wrapper {
+  position: relative;
+  width: min(620px, 100%);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 28px;
+  border: 2px solid #f2d2a7;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16) 0 14%, transparent 42%),
+    radial-gradient(circle at 72% 72%, rgba(255, 255, 255, 0.08) 0 12%, transparent 46%),
+    linear-gradient(145deg, #122230 0%, #0e1924 55%, #0c1219 100%);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.sb-ring {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 210, 167, 0.8);
+}
+
+.sb-ring-outer {
+  inset: 6%;
+}
+
+.sb-ring-mid {
+  inset: 18%;
+}
+
+.sb-ring-inner {
+  inset: 30%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.sb-ring-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #ffd9aa;
+}
+
+.sb-year-display {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.75rem, 7vw, 3rem);
+  font-weight: 800;
+  color: #ffe8c8;
+}
+
+.sb-year-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #f2d2a7;
+  background: rgba(18, 34, 48, 0.85);
+  color: #ffe8c8;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sb-year-btn.left {
+  left: 14px;
+}
+
+.sb-year-btn.right {
+  right: 14px;
+}
+
+.sb-span-options {
+  position: absolute;
+  inset: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sb-tier-btn,
+.sb-span-btn,
+.sb-count-btn,
+.sb-act-btn {
+  border: 1px solid #f2d2a7;
+  border-radius: 999px;
+  background: rgba(20, 34, 44, 0.85);
+  color: #ffe8c8;
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sb-tier-btn {
+  width: min(150px, 100%);
+}
+
+.sb-tier-btn.active,
+.sb-span-btn.active,
+.sb-count-btn.active {
+  background: #e7b778;
+  color: #1a1a1a;
+}
+
+.sb-center {
+  position: absolute;
+  inset: 40%;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 210, 167, 0.8);
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  align-content: center;
+  background: radial-gradient(circle, rgba(33, 57, 71, 0.95) 0%, rgba(15, 25, 36, 0.95) 100%);
+  padding: 8px;
+}
+
+.sb-center-value {
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  font-weight: 800;
+}
+
+.sb-count-options {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.sb-act-btn {
+  min-width: 140px;
+}
+
+.sb-act-btn.primary {
+  background: #e7b778;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .sb-year-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sb-tier-btn,
+  .sb-span-btn,
+  .sb-count-btn,
+  .sb-act-btn {
+    padding: 7px 10px;
+  }
+}

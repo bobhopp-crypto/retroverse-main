@@ -1,0 +1,109 @@
+.analytics-root .analytics-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.analytics-root .analytics-mode-toggle button {
+  padding: 4px 8px;
+}
+
+.analytics-root .analytics-mode-toggle button.active {
+  font-weight: 700;
+}
+
+.analytics-root .analytics-detail-card {
+  display: grid;
+  gap: 8px;
+}
+
+.analytics-root .analytics-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.analytics-root .kpi-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.analytics-root .kpi-card .kpi-value {
+  line-height: 1.2;
+}
+
+.analytics-root .event-detail-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.analytics-root .track-row,
+.analytics-root .tier-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 4px 0;
+}
+
+.analytics-root .session-list {
+  display: grid;
+  gap: 0;
+}
+
+.analytics-root .session-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.analytics-root .session-detail {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.analytics-root .song-row {
+  font-size: 0.9rem;
+  line-height: 1.25;
+  padding: 4px 0;
+}
+
+.compact .analytics-detail-card {
+  padding: 8px 10px;
+}
+
+.compact .analytics-section-header {
+  padding: 6px 10px;
+  font-size: 0.95rem;
+}
+
+.compact .kpi-card {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+}
+
+.compact .kpi-card h3 {
+  font-size: 0.8rem;
+}
+
+.compact .kpi-card .kpi-value {
+  font-size: 1rem;
+}
+
+.compact .session-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #eee;
+}

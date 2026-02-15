@@ -1,0 +1,190 @@
+.video-library-v2 {
+  --vl2-soft-blue: #f3f6ff;
+  --vl2-mint: #eaf7f1;
+  --vl2-peach: #fff4ec;
+  --vl2-lilac: #fef7ff;
+  --vl2-ice: #f2fbff;
+  color: #111827;
+  padding: 12px;
+  font-family: 'Space Grotesk', 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.vl2-band-wrap {
+  background: #f7fbff;
+  border-radius: 14px;
+  padding: 8px 10px;
+  box-shadow: none;
+}
+
+.vl2-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 0 6px;
+}
+
+.vl2-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vl2-title {
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.vl2-subtle {
+  font-size: 0.82rem;
+  opacity: 0.65;
+}
+
+.vl2-status {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 24, 39, 0.07);
+  font-weight: 700;
+  backdrop-filter: blur(3px);
+}
+
+.vl2-toggle {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 10px;
+  background: #fff;
+  color: #1f2937;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.vl2-toggle.on {
+  background: #eaf7f1;
+}
+
+.vl2-empty {
+  text-align: center;
+  padding: 48px 12px;
+  font-weight: 600;
+  color: #1b2735;
+}
+
+.vl2-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.vl2-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 10px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 24, 39, 0.04);
+  box-shadow: none;
+  background: #fff;
+}
+
+.vl2-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.vl2-row-title {
+  font-size: 0.95rem;
+  font-weight: 750;
+  letter-spacing: -0.005em;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vl2-row-artist {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4b5563;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vl2-row-meta {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vl2-thumb-wrap {
+  width: 48px;
+  height: 32px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vl2-thumb {
+  max-height: 32px;
+  max-width: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.vl2-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vl2-icon-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f2937;
+  font-weight: 750;
+  font-size: 0.85rem;
+  cursor: not-allowed;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 640px) {
+  .video-library-v2 {
+    padding: 10px;
+  }
+
+  .vl2-row {
+    height: 56px;
+    border-radius: 12px;
+  }
+
+  .vl2-row-actions {
+    gap: 6px;
+  }
+}
+
+.vl2-list.visual .vl2-row {
+  height: 64px;
+}
+
+@media (max-width: 640px) {
+  .vl2-list.visual .vl2-row {
+    height: 72px;
+  }
+}
