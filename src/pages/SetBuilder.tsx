@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import logoMark from '../assets/round-logo.png'
+import { HISTORY_INDEX_URL } from '../config/dataSources'
 import { usePlaylistContext } from '../context/PlaylistContext'
 import { formatDuration, formatYear, loadVideoIndex, type VideoRecord } from '../lib/videoIndex'
-import historyIndexUrl from '../../artifacts/output/history-index.json?url'
 import {
   TIER_COLORS,
   YEAR_DOMAIN_MAX,
@@ -141,7 +141,7 @@ export default function SetBuilder() {
   useEffect(() => {
     let cancelled = false
 
-    fetch(historyIndexUrl)
+    fetch(HISTORY_INDEX_URL)
       .then((response) => (response.ok ? response.json() : null))
       .then((history) => {
         if (cancelled || !history?.perSong || typeof history.perSong !== 'object') return

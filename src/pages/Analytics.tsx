@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useAtom } from 'jotai'
-import historyIndexUrl from '../../artifacts/output/history-index.json?url'
 import EventTypeDetailPanel from '../components/analytics/EventTypeDetailPanel'
 import PlaycountBarChart from '../components/Charts/PlaycountBarChart'
+import { HISTORY_INDEX_URL } from '../config/dataSources'
 import { TIER_ORDER } from '../lib/tierMapping'
 import { analyticsDataAtom, chartStyleAtom } from '../state/analyticsState'
 import { loadVideoIndex, type VideoRecord } from '../lib/videoIndex'
@@ -79,7 +79,7 @@ export default function Analytics() {
 
     const load = async () => {
       const [historyResult, videoResult] = await Promise.allSettled([
-        fetch(historyIndexUrl).then((res) => {
+        fetch(HISTORY_INDEX_URL).then((res) => {
           if (!res.ok) throw new Error(`Failed to load history-index.json (${res.status})`)
           return res.json() as Promise<HistoryData>
         }),

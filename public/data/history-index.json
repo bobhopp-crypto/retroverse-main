@@ -1,0 +1,17 @@
+{
+  "sessions": [],
+  "perSong": {},
+  "eventCounts": {},
+  "analytics": {
+    "topSongs": {
+      "7d": [],
+      "30d": [],
+      "90d": [],
+      "year": []
+    },
+    "yearDistribution": {},
+    "decadeDistribution": {},
+    "hourOfDayHeatmap": {},
+    "dayOfWeekHeatmap": {}
+  }
+}

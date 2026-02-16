@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import videoIndexUrl from '../../artifacts/output/video-index.json?url'
+import { VIDEO_INDEX_URL } from '../config/dataSources'
 import './VideoLibraryV2.css'
 
 type RawVideoIndexItem = {
@@ -59,7 +59,7 @@ export default function VideoLibraryV2() {
       setLoading(true)
       setError(null)
       try {
-        const res = await fetch(videoIndexUrl)
+        const res = await fetch(VIDEO_INDEX_URL)
         if (!res.ok) throw new Error(`Failed to load video-index.json (${res.status})`)
         const body = await res.json()
         const items = Array.isArray(body?.items) ? body.items : Array.isArray(body) ? body : []
@@ -83,7 +83,7 @@ export default function VideoLibraryV2() {
         <div className="vl2-header">
           <div>
             <div className="vl2-title">Video Library v2</div>
-            <div className="vl2-subtle">Static inventory from artifacts/output/video-index.json</div>
+            <div className="vl2-subtle">Static inventory from /data/video-index.json</div>
           </div>
           <div className="vl2-controls">
             <button

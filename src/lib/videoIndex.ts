@@ -1,4 +1,4 @@
-import videoIndexUrl from '../../artifacts/output/video-index.json?url'
+import { VIDEO_INDEX_URL } from '../config/dataSources'
 import { MEDIA_BASE } from '../config/media'
 import { tierFromPlaycount, type CanonicalTier } from './tierMapping'
 import { normalizeVideoPath } from './videoPath'
@@ -344,7 +344,7 @@ export const parseVideoIndexRows = (items: RawVideoIndexItem[]): VideoRecord[] =
 }
 
 export const loadVideoIndex = async (): Promise<VideoRecord[]> => {
-  const res = await fetch(videoIndexUrl)
+  const res = await fetch(VIDEO_INDEX_URL)
   if (!res.ok) throw new Error(`Failed to load video-index.json (${res.status})`)
   const body = await res.json()
   const items = (Array.isArray(body?.items) ? body.items : Array.isArray(body) ? body : []) as RawVideoIndexItem[]
