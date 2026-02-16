@@ -35,6 +35,13 @@ tools/
 r2_inventory.json
 r2_thumbs.json
 
+# Keep real production index artifact tracked for build sync
+!artifacts/
+artifacts/*
+!artifacts/output/
+artifacts/output/*
+!artifacts/output/video-index.json
+
 # Non-production tooling/codepaths
 pipeline/
 api/

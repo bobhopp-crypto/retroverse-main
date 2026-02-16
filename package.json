@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "dev:auto": "tsx tools/autoUpdate.ts && npm run dev",
-    "build": "tsc -b tsconfig.app.json tsconfig.node.json && vite build",
+    "sync:index": "bash scripts/sync-index.sh",
+    "build": "npm run sync:index && tsc -b tsconfig.app.json tsconfig.node.json && vite build",
     "test:tier-mapping": "tsx --test tools/tierMapping.test.ts",
     "lint": "eslint .",
     "preview": "vite preview",
